@@ -1,0 +1,32 @@
+site_name: Automation project
+site_url: http://wiki.mphp.net
+repo_url: https://github.com/mphp/MkDocs
+pages:
+#  - Home: index.md
+  - 'Introduction': 'index.md'
+  - Ecosystem:
+    - 'Installing the system': 'installing.md'
+    - 'Setting up SSH': 'ssh.md'
+    - 'Accessing the configuration': 'configuration.md'
+    - 'Choosing the right IDE and extensions': 'ide.md'
+  - Home-Assistant:
+    - 'Installation': 'homeassistant/install_homeassistant.md'
+    - 'Basic configuration': 'homeassistant/basic_config.md'
+    - 'Access from everywhere': 'homeassistant/access_from_everywhere.md'
+    - 'Device tracking': 'homeassistant/device_tracking.md'
+    - 'Z-Wave': 'homeassistant/zwave.md'
+  - Retropie:
+    - 'Ubuntu amd64 install': 'retropie/install_retropie.md'
+  - MkDocs:
+    - 'Install, usage and tricks': 'mkdocs/install_mkdocs.md'
+  - About: about.md
+theme: readthedocs
+google_analytics: ['UA-28268184-4', 'wiki.mphp.net']
+markdown_extensions:
+  - footnotes:
+  - nl2br:
+  - admonition:
+  - toc:
+      permalink: True
+
+copyright: <center>Copyright &copy; 2016 <a href="mailto:g.garnier@mphp.net"> G. Garnier </a></>
