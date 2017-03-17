@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>http://wiki.mphp.net/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>http://wiki.mphp.net/installing/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://wiki.mphp.net/ssh/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://wiki.mphp.net/configuration/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://wiki.mphp.net/ide/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://wiki.mphp.net/homeassistant/install_homeassistant/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://wiki.mphp.net/homeassistant/basic_config/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://wiki.mphp.net/homeassistant/access_from_everywhere/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://wiki.mphp.net/homeassistant/device_tracking/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://wiki.mphp.net/homeassistant/zwave/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://wiki.mphp.net/retropie/install_retropie/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://wiki.mphp.net/mkdocs/install_mkdocs/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>http://wiki.mphp.net/about/</loc>
+     <lastmod>2017-03-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Setting up SSH - Automation project</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Setting up SSH";
+    var mkdocs_page_input_path = "ssh.md";
+    var mkdocs_page_url = "/ssh/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-28268184-4', 'wiki.mphp.net');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Automation project</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Ecosystem</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../installing/">Installing the system</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Setting up SSH</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#setting-up-ssh">Setting up ssh</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#advanced-ssh">Advanced SSH</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../configuration/">Accessing the configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ide/">Choosing the right IDE and extensions</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home-Assistant</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../homeassistant/install_homeassistant/">Installation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../homeassistant/basic_config/">Basic configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../homeassistant/access_from_everywhere/">Access from everywhere</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../homeassistant/device_tracking/">Device tracking</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../homeassistant/zwave/">Z-Wave</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Retropie</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../retropie/install_retropie/">Ubuntu amd64 install</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">MkDocs</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../mkdocs/install_mkdocs/">Install, usage and tricks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Automation project</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Ecosystem &raquo;</li>
+        
+      
+    
+    <li>Setting up SSH</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/mphp/MkDocs/edit/master/docs/ssh.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="setting-up-ssh">Setting up ssh<a class="headerlink" href="#setting-up-ssh" title="Permanent link">&para;</a></h1>
+<p>Now that your Raspberry or PC is installed with Ubuntu, Raspbian or any other Linux flavor, it is time to access it. As it will be used as a server, there is no need to plug a monitor, or to have it around you. It can lie in a closet, next to your router. As long as it is network wired.</p>
+<p>SSH is the easiest and most secure way to access your server. You will need access to manage services running there, as well as installing new software depending on your usage. It's also needed so that you can change the default password of the default user, specifically on the Raspberry Pi.</p>
+<div class="admonition warning">
+<p class="admonition-title"> </p>
+<p>Even though SSH stands for Secure Shell you need additional steps to make it robust and start using it from outside of your home network.</p>
+<p>Those steps are described <a href="#advanced-ssh">here</a>.</p>
+</div>
+<p>First, find out your server IP address. The easiest way is to connect to your router administration page and from there find your device and its IP address. Your router would have assigned an IP address to your server through DHCP.</p>
+<p>While you are there, and because we are setting up a server we expect it's address to remain the same over time, so go and check for the place where you can assign a fix IP local IP address for your server. Once done, take note of that IP address.</p>
+<p>Now, from your MacBook, open the Terminal application and type:</p>
+<pre><code class="bash">ssh &lt;YourUser&gt;@&lt;YourIPAddress&gt;
+</code></pre>
+
+<p>So that it looks like this:</p>
+<pre><code class="bash">ssh pi@192.168.1.10
+</code></pre>
+
+<p>Once you press enter you should be prompted to accept the server key. You are then connected.</p>
+<p>If you did not set a password for your current user on the server, then you now need to change the default one. At the command prompt, type :</p>
+<pre><code class="bash">passwd
+</code></pre>
+
+<p>and follow the instructions.</p>
+<p>Now to prevent having to provide a password each time you connect to your server from your MacBook, we are going to generate a public and a private RSA key on the mac, which will then be use to securely authenticate with the server. This is more secure than just using a password, although this is a very long story.</p>
+<p>So first exit the terminal session on your server by typing "exit" in the Terminal.</p>
+<p>This should get you back to the OS X command prompt. Now type the below:</p>
+<pre><code class="bash">ssh-keygen -t rsa -b 4096
+</code></pre>
+
+<p>Accept all the defaults (just press enter for each and every question).</p>
+<p>Now that we have our secure keys we will send the public one on the server.</p>
+<pre><code class="bash">ssh-copy-id  &lt;YourUser&gt;@&lt;YourIPAddress&gt;
+</code></pre>
+
+<p>So this should look like:</p>
+<pre><code class="bash">ssh-copy-id  pi@192.168.1.10
+</code></pre>
+
+<p>You are now asked for your server password one last time. The public key is then copied on the server, which will recognize your MacBook next time you connect.</p>
+<p>Now if you try to connect using :</p>
+<pre><code class="bash">ssh pi@192.168.1.10
+</code></pre>
+
+<p>gone is the password prompt!</p>
+<h2 id="advanced-ssh">Advanced SSH<a class="headerlink" href="#advanced-ssh" title="Permanent link">&para;</a></h2>
+<p>As you may soon expose your server to the Internet, there are few things you want to put in place so that your ssh access from outside your home is secure.</p>
+<h3 id="ssh-daemon-configuration">SSH Daemon configuration<a class="headerlink" href="#ssh-daemon-configuration" title="Permanent link">&para;</a></h3>
+<h3 id="fail2ban">fail2ban<a class="headerlink" href="#fail2ban" title="Permanent link">&para;</a></h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configuration/" class="btn btn-neutral float-right" title="Accessing the configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../installing/" class="btn btn-neutral" title="Installing the system"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p><center>Copyright &copy; 2016 <a href="mailto:g.garnier@mphp.net"> G. Garnier </a></></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/mphp/MkDocs" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../installing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

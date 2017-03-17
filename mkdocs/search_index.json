@@ -1,0 +1,129 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "This site is documenting the steps I have followed to install Home-Assistant, Retropie, this website and some other tools, so that I can put my computers at work.\n\n\nWhat I document here may not work for you, but it will surely give you the basics of the setup and can be used as a reference. The setup is mainly based on an Ubuntu amd64 install, although I might sometime mention ways to proceed on a Raspberry Pi, or using a specific distribution like Hassbian.\n\n\nWhile both Home-Assistant and Retropie installs are very well documented for Raspberry Pi, it's not the case for a PC using Ubuntu, especially amd64. I am not saying it's not documented I am saying the information is sparsed.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/installing/", 
+            "text": "Installing the system", 
+            "title": "Installing the system"
+        }, 
+        {
+            "location": "/installing/#installing-the-system", 
+            "text": "", 
+            "title": "Installing the system"
+        }, 
+        {
+            "location": "/ssh/", 
+            "text": "Setting up ssh\n\n\nNow that your Raspberry or PC is installed with Ubuntu, Raspbian or any other Linux flavor, it is time to access it. As it will be used as a server, there is no need to plug a monitor, or to have it around you. It can lie in a closet, next to your router. As long as it is network wired.\n\n\nSSH is the easiest and most secure way to access your server. You will need access to manage services running there, as well as installing new software depending on your usage. It's also needed so that you can change the default password of the default user, specifically on the Raspberry Pi.\n\n\n\n\n \n\n\nEven though SSH stands for Secure Shell you need additional steps to make it robust and start using it from outside of your home network.\n\n\nThose steps are described \nhere\n.\n\n\n\n\nFirst, find out your server IP address. The easiest way is to connect to your router administration page and from there find your device and its IP address. Your router would have assigned an IP address to your server through DHCP.\n\n\nWhile you are there, and because we are setting up a server we expect it's address to remain the same over time, so go and check for the place where you can assign a fix IP local IP address for your server. Once done, take note of that IP address.\n\n\nNow, from your MacBook, open the Terminal application and type:\n\n\nssh \nYourUser\n@\nYourIPAddress\n\n\n\n\n\nSo that it looks like this:\n\n\nssh pi@192.168.1.10\n\n\n\n\nOnce you press enter you should be prompted to accept the server key. You are then connected.\n\n\nIf you did not set a password for your current user on the server, then you now need to change the default one. At the command prompt, type :\n\n\npasswd\n\n\n\n\nand follow the instructions.\n\n\nNow to prevent having to provide a password each time you connect to your server from your MacBook, we are going to generate a public and a private RSA key on the mac, which will then be use to securely authenticate with the server. This is more secure than just using a password, although this is a very long story.\n\n\nSo first exit the terminal session on your server by typing \"exit\" in the Terminal.\n\n\nThis should get you back to the OS X command prompt. Now type the below:\n\n\nssh-keygen -t rsa -b 4096\n\n\n\n\nAccept all the defaults (just press enter for each and every question).\n\n\nNow that we have our secure keys we will send the public one on the server.\n\n\nssh-copy-id  \nYourUser\n@\nYourIPAddress\n\n\n\n\n\nSo this should look like:\n\n\nssh-copy-id  pi@192.168.1.10\n\n\n\n\nYou are now asked for your server password one last time. The public key is then copied on the server, which will recognize your MacBook next time you connect.\n\n\nNow if you try to connect using :\n\n\nssh pi@192.168.1.10\n\n\n\n\ngone is the password prompt!\n\n\nAdvanced SSH\n\n\nAs you may soon expose your server to the Internet, there are few things you want to put in place so that your ssh access from outside your home is secure.\n\n\nSSH Daemon configuration\n\n\nfail2ban", 
+            "title": "Setting up SSH"
+        }, 
+        {
+            "location": "/ssh/#setting-up-ssh", 
+            "text": "Now that your Raspberry or PC is installed with Ubuntu, Raspbian or any other Linux flavor, it is time to access it. As it will be used as a server, there is no need to plug a monitor, or to have it around you. It can lie in a closet, next to your router. As long as it is network wired.  SSH is the easiest and most secure way to access your server. You will need access to manage services running there, as well as installing new software depending on your usage. It's also needed so that you can change the default password of the default user, specifically on the Raspberry Pi.      Even though SSH stands for Secure Shell you need additional steps to make it robust and start using it from outside of your home network.  Those steps are described  here .   First, find out your server IP address. The easiest way is to connect to your router administration page and from there find your device and its IP address. Your router would have assigned an IP address to your server through DHCP.  While you are there, and because we are setting up a server we expect it's address to remain the same over time, so go and check for the place where you can assign a fix IP local IP address for your server. Once done, take note of that IP address.  Now, from your MacBook, open the Terminal application and type:  ssh  YourUser @ YourIPAddress   So that it looks like this:  ssh pi@192.168.1.10  Once you press enter you should be prompted to accept the server key. You are then connected.  If you did not set a password for your current user on the server, then you now need to change the default one. At the command prompt, type :  passwd  and follow the instructions.  Now to prevent having to provide a password each time you connect to your server from your MacBook, we are going to generate a public and a private RSA key on the mac, which will then be use to securely authenticate with the server. This is more secure than just using a password, although this is a very long story.  So first exit the terminal session on your server by typing \"exit\" in the Terminal.  This should get you back to the OS X command prompt. Now type the below:  ssh-keygen -t rsa -b 4096  Accept all the defaults (just press enter for each and every question).  Now that we have our secure keys we will send the public one on the server.  ssh-copy-id   YourUser @ YourIPAddress   So this should look like:  ssh-copy-id  pi@192.168.1.10  You are now asked for your server password one last time. The public key is then copied on the server, which will recognize your MacBook next time you connect.  Now if you try to connect using :  ssh pi@192.168.1.10  gone is the password prompt!", 
+            "title": "Setting up ssh"
+        }, 
+        {
+            "location": "/ssh/#advanced-ssh", 
+            "text": "As you may soon expose your server to the Internet, there are few things you want to put in place so that your ssh access from outside your home is secure.", 
+            "title": "Advanced SSH"
+        }, 
+        {
+            "location": "/ssh/#ssh-daemon-configuration", 
+            "text": "", 
+            "title": "SSH Daemon configuration"
+        }, 
+        {
+            "location": "/ssh/#fail2ban", 
+            "text": "", 
+            "title": "fail2ban"
+        }, 
+        {
+            "location": "/configuration/", 
+            "text": "Accessing the configuration\n\n\nThere are many ways to access files on a remote host. As we are using a MacBook as our main development environment, here are the steps to make your remote host files accessible from your mac using Apple Filing Protocol.\n\n\nsudo apt-get install netatalk\n\n\n\n\nEdit the configuration file\n\n\nsudo nano /etc/default/netatalk\n\n\n\n\nand ensure the below are set correctly  :\n\n\nATALKD_RUN=no\nPAPD_RUN=no\nCNID_METAD_RUN=yes\nAFPD_RUN=yes\nTIMELORD_RUN=no\nA2BOOT_RUN=no\n\n\n\n\nSave and exit (Ctrl+0 , Ctrl+x)\n\n\nThen we need to specify which files we are going to share :\n\n\nsudo nano /etc/netatalk/AppleVolumes.default\n\n\n\n\nat the very end of the file add the below :\n\n\n/your/path  VolumeName allow:@groupname options:usedots,upriv\n\n\n\n\nSave and exit (Ctrl+0 , Ctrl+x)\n\n\nSo this could look like the below if you have used hassbian and Home Assistant is already installed:\n\n\n/home/homeassistant/.homeassistant  HomeAssistant allow:@groupname options:usedots,upriv\n\n\n\n\nnow restart the daemon :\n\n\nsudo /etc/init.d/netatalk restart\n\n\n\n\nTheoretically, you should now be able to connect to your server from your MacBook. However this would require specifying the URI with the server hostname or IP address. Using Avahi, your server can advertise itself and automagically appear in your Finder.\n\n\nsudo apt-get install avahi-daemon libnss-mdns\n\n\n\n\nEdit the configuration\n\n\nsudo nano /etc/nsswitch.conf\n\n\n\n\nModify the \"hosts\" line so that it looks like this:\n\n\nhosts: files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns\n\n\n\n\nSave and exit (Ctrl+0 , Ctrl+x)\n\n\nCreate a service file for the afp service\n\n\nsudo nano /etc/avahi/services/afpd.service\n\n\n\n\nand add\n\n\n?xml version=\n1.0\n standalone='no'?\n!--*-nxml-*--\n\n\n!DOCTYPE service-group SYSTEM \navahi-service.dtd\n\n\nservice-group\n\n    \nname replace-wildcards=\nyes\n%h\n/name\n\n    \nservice\n\n        \ntype\n_afpovertcp._tcp\n/type\n\n        \nport\n548\n/port\n\n    \n/service\n\n    \nservice\n\n        \ntype\n_device-info._tcp\n/type\n\n        \nport\n0\n/port\n\n        \ntxt-record\nmodel=MacPro\n/txt-record\n\n    \n/service\n\n\n/service-group\n\n\n\n\n\nSave, exit (Ctrl+0 , Ctrl+x)\n\n\nand restart the daemon :\n\n\nsudo /etc/init.d/avahi-daemon restart\n\n\n\n\nYou should now see your server from your OSX Finder.", 
+            "title": "Accessing the configuration"
+        }, 
+        {
+            "location": "/configuration/#accessing-the-configuration", 
+            "text": "There are many ways to access files on a remote host. As we are using a MacBook as our main development environment, here are the steps to make your remote host files accessible from your mac using Apple Filing Protocol.  sudo apt-get install netatalk  Edit the configuration file  sudo nano /etc/default/netatalk  and ensure the below are set correctly  :  ATALKD_RUN=no\nPAPD_RUN=no\nCNID_METAD_RUN=yes\nAFPD_RUN=yes\nTIMELORD_RUN=no\nA2BOOT_RUN=no  Save and exit (Ctrl+0 , Ctrl+x)  Then we need to specify which files we are going to share :  sudo nano /etc/netatalk/AppleVolumes.default  at the very end of the file add the below :  /your/path  VolumeName allow:@groupname options:usedots,upriv  Save and exit (Ctrl+0 , Ctrl+x)  So this could look like the below if you have used hassbian and Home Assistant is already installed:  /home/homeassistant/.homeassistant  HomeAssistant allow:@groupname options:usedots,upriv  now restart the daemon :  sudo /etc/init.d/netatalk restart  Theoretically, you should now be able to connect to your server from your MacBook. However this would require specifying the URI with the server hostname or IP address. Using Avahi, your server can advertise itself and automagically appear in your Finder.  sudo apt-get install avahi-daemon libnss-mdns  Edit the configuration  sudo nano /etc/nsswitch.conf  Modify the \"hosts\" line so that it looks like this:  hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4 mdns  Save and exit (Ctrl+0 , Ctrl+x)  Create a service file for the afp service  sudo nano /etc/avahi/services/afpd.service  and add  ?xml version= 1.0  standalone='no'? !--*-nxml-*--  !DOCTYPE service-group SYSTEM  avahi-service.dtd  service-group \n     name replace-wildcards= yes %h /name \n     service \n         type _afpovertcp._tcp /type \n         port 548 /port \n     /service \n     service \n         type _device-info._tcp /type \n         port 0 /port \n         txt-record model=MacPro /txt-record \n     /service  /service-group   Save, exit (Ctrl+0 , Ctrl+x)  and restart the daemon :  sudo /etc/init.d/avahi-daemon restart  You should now see your server from your OSX Finder.", 
+            "title": "Accessing the configuration"
+        }, 
+        {
+            "location": "/ide/", 
+            "text": "Choosing the right IDE and extensions\n\n\nA very nice editor that plays well with Yaml is \nAtom\n. It's free and works on OS X, Windows and Linux.\n\n\nFrom Atom you can open a project folder, conveniently accessing all your home assistant files in the editor. And that works also from the AFP drive created in the above step.\n\n\nSome of the useful extensions that will save you some time are:\n\n\nLinter\n and \nLinter-js-yaml\n will check your syntax is correct, right in the Atom editor and will save you a lot of time.\n\n\nPigments\n and \nColor picker\n will be useful when setting up your smart lights.\n\n\nYou can install those extensions directly from the Atom settings page.", 
+            "title": "Choosing the right IDE and extensions"
+        }, 
+        {
+            "location": "/ide/#choosing-the-right-ide-and-extensions", 
+            "text": "A very nice editor that plays well with Yaml is  Atom . It's free and works on OS X, Windows and Linux.  From Atom you can open a project folder, conveniently accessing all your home assistant files in the editor. And that works also from the AFP drive created in the above step.  Some of the useful extensions that will save you some time are:  Linter  and  Linter-js-yaml  will check your syntax is correct, right in the Atom editor and will save you a lot of time.  Pigments  and  Color picker  will be useful when setting up your smart lights.  You can install those extensions directly from the Atom settings page.", 
+            "title": "Choosing the right IDE and extensions"
+        }, 
+        {
+            "location": "/homeassistant/install_homeassistant/", 
+            "text": "", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/homeassistant/basic_config/", 
+            "text": "Basic configuration\n\n\nSo that's where it starts.", 
+            "title": "Basic configuration"
+        }, 
+        {
+            "location": "/homeassistant/basic_config/#basic-configuration", 
+            "text": "So that's where it starts.", 
+            "title": "Basic configuration"
+        }, 
+        {
+            "location": "/homeassistant/access_from_everywhere/", 
+            "text": "", 
+            "title": "Access from everywhere"
+        }, 
+        {
+            "location": "/homeassistant/device_tracking/", 
+            "text": "", 
+            "title": "Device tracking"
+        }, 
+        {
+            "location": "/homeassistant/zwave/", 
+            "text": "", 
+            "title": "Z-Wave"
+        }, 
+        {
+            "location": "/retropie/install_retropie/", 
+            "text": "", 
+            "title": "Ubuntu amd64 install"
+        }, 
+        {
+            "location": "/mkdocs/install_mkdocs/", 
+            "text": "", 
+            "title": "Install, usage and tricks"
+        }, 
+        {
+            "location": "/about/", 
+            "text": "This site is not intended to replace the Home-Assistant various documentation and support channels. It is mostly a documentation effort as part of a study project. It may provide guidance to fresh starters, but this is not the primary intention.\n\n\nDomains:\n\n\nScripting:\n\n\n\n\nbash\n\n\nyaml\n\n\n\n\nNetwork:\n\n\nIOT:\n\n\nReferences\n\n\nUbuntu and Linux\n\n\nHome-Assistant\n\n\nHome-Assistant\n\n\nHome-Assistant Forum", 
+            "title": "About"
+        }, 
+        {
+            "location": "/about/#domains", 
+            "text": "Scripting:   bash  yaml   Network:  IOT:", 
+            "title": "Domains:"
+        }, 
+        {
+            "location": "/about/#references", 
+            "text": "", 
+            "title": "References"
+        }, 
+        {
+            "location": "/about/#ubuntu-and-linux", 
+            "text": "", 
+            "title": "Ubuntu and Linux"
+        }, 
+        {
+            "location": "/about/#home-assistant", 
+            "text": "Home-Assistant  Home-Assistant Forum", 
+            "title": "Home-Assistant"
+        }
+    ]
+}
